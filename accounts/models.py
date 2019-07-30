@@ -5,7 +5,7 @@ from django.db import models
 
 
 class CustomUser(AbstractUser):
-    id = models.UUIDFied(primary_key=True, editable=False, default=uuid4)
+    id = models.UUIDField(primary_key=True, editable=False, default=uuid4)
 
 
 class Profile(models.Model):
