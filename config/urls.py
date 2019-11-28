@@ -31,3 +31,8 @@ if settings.DEBUG:
         settings.MEDIA_URL,
         document_root=settings.MEDIA_ROOT
     )
+
+
+# Update Admin Site Title
+admin.site.site_header = f'{settings.PROJECT_NAME} Adminstrator'
+admin.site.site_title = f'{settings.PROJECT_NAME} Adminstrator'

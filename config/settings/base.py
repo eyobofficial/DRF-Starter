@@ -179,16 +179,15 @@ AUTHENTICATION_BACKENDS = [
 
 
 # Custom Auth User Model
-
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-
 # Cors Headers
-
 CORS_ORIGIN_ALLOW_ALL = True
-
 
 # Default Admin Account
 DEFAULT_ADMIN_USERNAME = config('ADMIN_USERNAME')
 DEFAULT_ADMIN_EMAIL = config('ADMIN_EMAIL')
 DEFAULT_ADMIN_PASSWORD = config('ADMIN_PASSWORD')
+
+# Project Name
+PROJECT_NAME = config('PROJECT_NAME', default='Django')
