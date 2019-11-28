@@ -48,6 +48,7 @@ INSTALLED_APPS += [
 
 INSTALLED_APPS += [
     'accounts.apps.AccountsConfig',
+    'shared.apps.SharedConfig'
 ]
 
 MIDDLEWARE = [
@@ -160,10 +161,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 
 # Authentications
@@ -182,3 +186,9 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 # Cors Headers
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+# Default Admin Account
+DEFAULT_ADMIN_USERNAME = config('ADMIN_USERNAME')
+DEFAULT_ADMIN_EMAIL = config('ADMIN_EMAIL')
+DEFAULT_ADMIN_PASSWORD = config('ADMIN_PASSWORD')

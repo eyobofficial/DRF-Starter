@@ -155,6 +155,7 @@ celerybeat-schedule
 
 # dotenv
 .env
+.env.*
 
 # virtualenv
 .venv/
@@ -239,9 +240,7 @@ Temporary Items
 
 # Custom
 /media
-/config/media
-/static
-/config/static
+/staticfiles
 /logs
 celerybeat.pid
 *.db

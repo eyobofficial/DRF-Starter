@@ -1,0 +1,5 @@
+staticfiles/
+mediafiles/
+.git/
+.gitignore
+docker-compose.yaml
