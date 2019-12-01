@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while ! nc -z $DB_HOST $DB_PORT; do
+while ! docker-compose run web nc -z $DB_HOST $DB_PORT; do
     sleep 2s
 done
 
