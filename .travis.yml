@@ -1,8 +1,21 @@
 sudo: required
 services:
   - docker
+  - mysql
+  - redis-server
+env:
+  - SECRET_KEY=vozjc3e@0w^5db2ya#yy$qglrskdmnu83(p*^j(!tw*3t_6b9o
+  - DJANGO_SETTINGS_MODULE=config.settings.testing
+  - ADMIN_USERNAME=admin
+  - ADMIN_EMAIL=admin@test.email
+  - ADMIN_PASSWORD=secret
+  - DB_NAME=travis_ci_test
+  - DB_USER=root
+  - DB_HOST=localhost
+  - CELERY_BROKER_URL=redis://localhost:6379
+  - CELERY_RESULT_BACKEND=redis://localhost:6379
+
 before_install:
-  - cp env_travis .env
-  - docker-compose up --build
+  - docker build -t eyobofficial/drf-starter .
 script:
-  - bash './run_tests.sh'
+  - docker container run eyobofficial/drf-starter python manage.py test --no-input

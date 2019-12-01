@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Run tests
-python manage.py test --no-input
+docker-compose run web python manage.py test --no-input
