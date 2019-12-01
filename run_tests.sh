@@ -7,9 +7,6 @@ echo 'Waiting for database....'
 echo $DB_HOST
 echo $DB_PORT
 
-echo
-echo
-
 while ! nc -z $DB_HOST $DB_PORT; do
     sleep 2s
 done
