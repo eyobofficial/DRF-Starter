@@ -1,10 +1,9 @@
 language: python
 services:
   - docker
-  - mysql
-  - redis-server
+
 before_install:
   - mv env.travis .env
-  - docker build -t eyobofficial/drf-starter .
+  - docker-compose up --build -d
 script:
-  - docker container run --net host eyobofficial/drf-starter python manage.py test --no-input
+  - docker-compose run web python manage.py test --no-input
