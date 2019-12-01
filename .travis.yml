@@ -3,4 +3,4 @@ language: python
 services:
   - docker
 script:
-  - docker-compose -f docker-compose-travis.yaml up --build -d
+  - docker-compose -f docker-compose-travis.yaml up --build
