@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mv env.travis .env
+
 # Check if database is ready
 echo 'Waiting for database....'
 echo $DB_HOST

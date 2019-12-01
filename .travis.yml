@@ -3,7 +3,6 @@ language: python
 services:
   - docker
 before_install:
-  - mv env.travis .env
   - docker-compose -f docker-compose-travis.yaml up --build -d
 script:
   - bash ./run_tests.sh
