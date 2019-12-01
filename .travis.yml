@@ -2,8 +2,13 @@ language: python
 services:
   - docker
 
+env:
+  global:
+    - DB_HOST=db
+    - DB_PORT=3306
+
 before_install:
   - mv env.travis .env
   - docker-compose up --build -d
 script:
-  - docker-compose run web python manage.py test --no-input
+  - bash ./run_tests.sh
