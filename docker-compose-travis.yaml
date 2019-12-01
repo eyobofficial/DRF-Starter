@@ -3,6 +3,9 @@ services:
   web:
     build: .
     command: bash ./run_tests.sh
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
     depends_on:
       - db
   db:
