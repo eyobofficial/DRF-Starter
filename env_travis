@@ -4,6 +4,12 @@ ALLOWED_HOSTS=.localhost, .127.0.0.1
 DJANGO_SETTINGS_MODULE=config.settings.testing
 
 
+# Admin Settings
+ADMIN_USERNAME=admin
+ADMIN_EMAIL=admin@test.email
+ADMIN_PASSWORD=secret
+
+
 # Database variables
 DB_ROOT_PASSWORD=secret
 DB_NAME=drf_starter

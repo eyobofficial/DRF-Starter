@@ -13,12 +13,9 @@ echo 'Run migrations...'
 python manage.py migrate --no-input
 
 # Create a default superuser account
-if [ "$ADMIN_USER" != '' && "$ADMIN_PASSWORD" != '' ]; then
-    echo 'Create a default superuser account...'
-    python manage.py create_default_superuser
-else
-    echo "Skip creating superuser account..."
-fi
+echo 'Create a default superuser account...'
+python manage.py create_default_superuser
+
 
 echo 'Collect static files...'
 python manage.py collectstatic --no-input --clear
