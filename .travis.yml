@@ -8,6 +8,7 @@ env:
     - DB_PORT=3306
 
 before_install:
+  - apt-get update && apt-get install netcat
   - mv env.travis .env
   - docker-compose up --build -d
 script:
