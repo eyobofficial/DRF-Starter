@@ -1,7 +1,8 @@
 version: '3'
 services:
-  django:
+  web:
     build: .
+    command: bash ./run_web.sh
     restart: always
     env_file:
       - ./.env
@@ -12,6 +13,7 @@ services:
       - media_volume:/code/mediafiles
     depends_on:
       - db
+      - redis-server
   db:
     image: mysql:5.7
     restart: always
@@ -19,8 +21,6 @@ services:
       - ./.env
     environment:
       MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
-      MYSQL_USER: $DB_USER
-      MYSQL_PASSWORD: $DB_PASSWORD
       MYSQL_DATABASE: $DB_NAME
     volumes:
       - mysql_data:/var/lib/mysql
@@ -37,7 +37,21 @@ services:
       - static_volume:/code/staticfiles
       - media_volume:/code/mediafiles
     depends_on:
-      - django
+      - web
+  redis-server:
+    image: redis
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+  celery:
+    build: .
+    command: bash ./run_celery.sh
+    restart: always
+    env_file:
+      - ./.env
+    depends_on:
+      - redis-server
+      - web
 
 volumes:
   mysql_data:

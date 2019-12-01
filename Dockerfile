@@ -13,5 +13,3 @@ RUN apt-get update -y && apt-get install netcat -y && \
 COPY  . .
 
 EXPOSE 8000
-
-ENTRYPOINT ["/code/entrypoint.sh"]

@@ -166,12 +166,12 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+# Media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
 
 # Authentications
-
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.EmailBackend'
@@ -181,6 +181,7 @@ AUTHENTICATION_BACKENDS = [
 # Custom Auth User Model
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+
 # Cors Headers
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -189,5 +190,14 @@ DEFAULT_ADMIN_USERNAME = config('ADMIN_USERNAME')
 DEFAULT_ADMIN_EMAIL = config('ADMIN_EMAIL')
 DEFAULT_ADMIN_PASSWORD = config('ADMIN_PASSWORD')
 
+
 # Project Name
-PROJECT_NAME = config('PROJECT_NAME', default='Django')
+PROJECT_NAME = 'Django_Starter'
+
+
+# Celery
+CELERY_BROKER_URL = config('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND = config('CELERY_BROKER_URL')
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
