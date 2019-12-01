@@ -1,3 +1,4 @@
+dst: bionic
 language: python
 services:
   - docker
@@ -8,7 +9,8 @@ env:
     - DB_PORT=3306
 
 before_install:
-  - apt-get update && apt-get install netcat
+  - sudo apt-get update -y
+  - sudo apt-get install netcat -y
   - mv env.travis .env
   - docker-compose up --build -d
 script:
