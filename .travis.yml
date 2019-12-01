@@ -7,4 +7,4 @@ before_install:
   - mv env.travis .env
   - docker build -t eyobofficial/drf-starter .
 script:
-  - docker container run -p 3306:3306 eyobofficial/drf-starter python manage.py test --no-input
+  - docker container run --net host eyobofficial/drf-starter python manage.py test --no-input
