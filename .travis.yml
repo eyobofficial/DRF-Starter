@@ -2,17 +2,17 @@ sudo: required
 services:
   - docker
 env:
-  - SECRET_KEY=(&^+4@&qt4b-^1=mad05%ju8q+4vg(vy6r2mq+gxab2eg#0f$b
-  - ALLOWED_HOSTS='.localhost, .127.0.0.1'
-  - DJANGO_SETTINGS_MODULE=config.settings.testing
-  - DB_ROOT_PASSWORD=secret
-  - DB_USER=root
-  - DB_PASSWORD=secret
-  - DB_HOST=db
-  - DB_PORT=3306
+  - SECRET_KEY="(&^+4@&qt4b-^1=mad05%ju8q+4vg(vy6r2mq+gxab2eg#0f$b"
+  - ALLOWED_HOSTS=".localhost, .127.0.0.1"
+  - DJANGO_SETTINGS_MODULE="config.settings.testing"
+  - DB_ROOT_PASSWORD="secret"
+  - DB_USER="root"
+  - DB_PASSWORD="secret"
+  - DB_HOST="db"
+  - DB_PORT="3306"
   - NGINX_PORT=8080
-  - CELERY_BROKER_URL=redis://redis-server:6379
-  - CELERY_RESULT_BACKEND=redis://redis-server:6379
+  - CELERY_BROKER_URL="redis://redis-server:6379"
+  - CELERY_RESULT_BACKEND="redis://redis-server:6379"
 
 before_install:
   - docker-compose up --build
