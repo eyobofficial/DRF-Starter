@@ -4,18 +4,19 @@ services:
   - mysql
   - redis-server
 env:
-  - SECRET_KEY="vozjc3e@0w^5db2ya#yy$qglrskdmnu83(p*^j(!tw*3t_6b9o"
-  - DJANGO_SETTINGS_MODULE="config.settings.testing"
-  - ADMIN_USERNAME="admin"
-  - ADMIN_EMAIL="admin@test.email"
-  - ADMIN_PASSWORD="secret"
-  - DB_NAME="travis_ci_test"
-  - DB_USER="root"
-  - DB_PASSWORD=""
-  - DB_HOST="localhost"
-  - DB_PORT="3306"
-  - CELERY_BROKER_URL="redis://localhost:6379"
-  - CELERY_RESULT_BACKEND="redis://localhost:6379"
+  global:
+    - SECRET_KEY="vozjc3e@0w^5db2ya#yy$qglrskdmnu83(p*^j(!tw*3t_6b9o"
+    - DJANGO_SETTINGS_MODULE="config.settings.testing"
+    - ADMIN_USERNAME="admin"
+    - ADMIN_EMAIL="admin@test.email"
+    - ADMIN_PASSWORD="secret"
+    - DB_NAME="travis_ci_test"
+    - DB_USER="root"
+    - DB_PASSWORD=""
+    - DB_HOST="localhost"
+    - DB_PORT="3306"
+    - CELERY_BROKER_URL="redis://localhost:6379"
+    - CELERY_RESULT_BACKEND="redis://localhost:6379"
 
 before_install:
   - docker build -t eyobofficial/drf-starter .
