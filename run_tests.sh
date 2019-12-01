@@ -15,5 +15,3 @@ python manage.py makemigrations  # TODO: Remove later
 # Run all tests
 echo 'Run tests...'
 python manage.py test --no-input
-
-exit
