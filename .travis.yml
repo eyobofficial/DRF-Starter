@@ -5,4 +5,4 @@ services:
 before_install:
   - docker build -t eyobofficial/drf-starter .
 script:
-  - docker run --net=host --env-file=.env.travis eyobofficial/drf-starter python manage.py test --verbosity 2 --no-input
+  - docker run --net=host --env-file=.env.travis eyobofficial/drf-starter bash ./run_tests.sh
