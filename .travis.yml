@@ -1,4 +1,20 @@
 language: python
+env:
+  global:
+    - SECRET_KEY=(&^+4@&qt4b-^1=mad05%ju8q+4vg(vy6r2mq+gxab2eg#0f$b
+    - ALLOWED_HOSTS=.localhost, .127.0.0.1
+    - DJANGO_SETTINGS_MODULE=config.settings.testing
+    - ADMIN_USERNAME=admin
+    - ADMIN_EMAIL=admin@test.email
+    - ADMIN_PASSWORD=secret
+    - DB_NAME=travis_ci_test
+    - DB_ROOT_PASSWORD=""
+    - DB_USER=root
+    - DB_PASSWORD=
+    - DB_HOST=127.0.0.1
+    - DB_PORT=3306
+    - CELERY_BROKER_URL=redis://localhost:6379
+    - CELERY_RESULT_BACKEND=redis://localhost:6379
 services:
   - docker
   - mysql
@@ -6,4 +22,4 @@ before_install:
   - mysql -e 'CREATE DATABASE travis_ci_test;'
   - docker build -t eyobofficial/drf-starter .
 script:
-  - docker run --net=host --env-file=.env.travis eyobofficial/drf-starter bash ./run_tests.sh
+  - docker run --net=host eyobofficial/drf-starter bash ./run_tests.sh
