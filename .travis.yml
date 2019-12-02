@@ -22,4 +22,4 @@ before_install:
   - mysql -e 'CREATE DATABASE travis_ci_test;'
   - docker build -t eyobofficial/drf-starter .
 script:
-  - docker run --net=host eyobofficial/drf-starter bash ./run_tests.sh
+  - docker run --net=host --env-file=.env.travis eyobofficial/drf-starter bash ./run_tests.sh
