@@ -1,6 +1,8 @@
-dst: bionic
 language: python
 services:
   - docker
+  - mysql
+before_install:
+  - docker build -t eyobofficial/drf-starter .
 script:
-  - docker-compose -f docker-compose-travis.yaml up --build
+  - docker run --net=host --env-file=.env.travis eyobofficial/drf-starter python manage.py test --verbosity 2 --no-input

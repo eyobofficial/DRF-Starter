@@ -2,4 +2,5 @@ staticfiles/
 mediafiles/
 .git/
 .gitignore
+.env
 docker-compose.yaml
