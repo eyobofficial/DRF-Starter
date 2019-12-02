@@ -3,4 +3,4 @@ mediafiles/
 .git/
 .gitignore
 .env
-docker-compose.yaml
+docker-compose*

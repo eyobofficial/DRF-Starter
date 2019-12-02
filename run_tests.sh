@@ -2,7 +2,7 @@
 
 # Run migrations
 echo 'Run migrations...'
-python manage.py makemigrations  # TODO: Remove later
+python manage.py makemigrations  # TODO: Remove in production
 
 # Run all tests
 echo 'Run tests...'
