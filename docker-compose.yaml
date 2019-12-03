@@ -52,6 +52,16 @@ services:
     depends_on:
       - redis-server
       - web
+  celery-beat:
+    build: .
+    command: celery beat -A config -l info
+    restart: always
+    env_file:
+      - ./.env
+    depends_on:
+      - web
+      - celery
+
 
 volumes:
   mysql_data:
