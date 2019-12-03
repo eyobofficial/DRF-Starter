@@ -45,7 +45,7 @@ services:
       - 6379:6379
   celery:
     build: .
-    command: bash ./run_celery.sh
+    command: celery worker -A config -l info
     restart: always
     env_file:
       - ./.env
