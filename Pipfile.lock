@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7e876b7df81b1547046130ca0c67e308982e37bac8e7c53034fb336cd1fd573a"
+            "sha256": "ac0ff1375a42e8046e38e3bf2d6485509c5821f052a65c0f5f50fc72ded7c3f5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -99,6 +99,14 @@
             "index": "pypi",
             "version": "==1.5.0"
         },
+        "django-celery-results": {
+            "hashes": [
+                "sha256:932277e9382528f74778b30cf90e17941cba577b7d73cee09ed55e4972972c32",
+                "sha256:e735dc3e705a0e21afc3b6fa2918ec388258145fcbaad3727c493c5707d25034"
+            ],
+            "index": "pypi",
+            "version": "==1.1.2"
+        },
         "django-cors-headers": {
             "hashes": [
                 "sha256:84933651fbbde8f2bc084bef2f077b79db1ec1389432f21dd661eaae6b3d6a95",
@@ -156,10 +164,10 @@
         },
         "faker": {
             "hashes": [
-                "sha256:48c03580720e0b46538d528b1296e4e5b24a809dcaf33a7dddec719489a9edb8",
-                "sha256:6327c665c0d8721280b3036d9c9e851c60092bc1f30c8394cc433f8723e2bda5"
+                "sha256:202ad3b2ec16ae7c51c02904fb838831f8d2899e61bf18db1e91a5a582feab11",
+                "sha256:92c84a10bec81217d9cb554ee12b3838c8986ce0b5d45f72f769da22e4bb5432"
             ],
-            "version": "==2.0.4"
+            "version": "==3.0.0"
         },
         "gunicorn": {
             "hashes": [
@@ -171,10 +179,10 @@
         },
         "importlib-metadata": {
             "hashes": [
-                "sha256:b044f07694ef14a6683b097ba56bd081dbc7cdc7c7fe46011e499dfecc082f21",
-                "sha256:e6ac600a142cf2db707b1998382cc7fc3b02befb7273876e01b8ad10b9652742"
+                "sha256:3a8b2dfd0a2c6a3636e7c016a7e54ae04b997d30e69d5eacdca7a6c2221a1402",
+                "sha256:41e688146d000891f32b1669e8573c57e39e5060e7f5f647aa617cd9a9568278"
             ],
-            "version": "==1.1.0"
+            "version": "==1.2.0"
         },
         "kombu": {
             "hashes": [
@@ -193,10 +201,10 @@
         },
         "more-itertools": {
             "hashes": [
-                "sha256:53ff73f186307d9c8ef17a9600309154a6ae27f25579e80af4db8f047ba14bc2",
-                "sha256:a0ea684c39bc4315ba7aae406596ef191fd84f873d2d2751f84d64e81a7a2d45"
+                "sha256:b84b238cce0d9adad5ed87e745778d20a3f8487d0f0cb8b8a586816c7496458d",
+                "sha256:c833ef592a0324bcc6a60e48440da07645063c453880c9477ceb22490aec1564"
             ],
-            "version": "==8.0.0"
+            "version": "==8.0.2"
         },
         "mysqlclient": {
             "hashes": [
