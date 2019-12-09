@@ -1,6 +1,6 @@
-# services:
-# - docker
-# - mysql
+services:
+- docker
+- mysql
 env:
 - SERVER_IP_ADDRESS=167.172.29.127
 before_install: # setup the RSA key for use in Dokku Deployment:
