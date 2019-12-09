@@ -8,8 +8,9 @@ before_install:
   -in deploy_key.enc -out ./deploy_key -d
 - ssh-add ./deploy_key
 - eval "$(ssh-agent -s)"
-- chmod 600 ./deploy_key
+- chmod 400 ./deploy_key
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- ssh -i ./deploy_key root@$SERVER_IP_ADDRESS pwd
 - mysql -e 'CREATE DATABASE travis_ci_test;'
 - docker build -t eyobofficial/drf-starter-django .
 install: skip
@@ -21,5 +22,4 @@ after_success:
 - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
 - docker push eyobofficial/drf-starter-django
 - docker push eyobofficial/drf-starter-nginx
-- ssh -i ./deploy_key root@138.68.163.126 pwd
 - echo $USER
