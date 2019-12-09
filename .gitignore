@@ -237,8 +237,8 @@ Temporary Items
 # IDE settings and configurations
 .vscode/
 
-# ci/cd
-super_secret.txt
+# Travis
+deploy_key
 
 # Custom
 /media
