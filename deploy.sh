@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo 'Script is called'
+touch file.txt
