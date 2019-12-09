@@ -7,4 +7,7 @@ ssh-add ./deploy_key
 eval "$(ssh-agent -s)"
 echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 ssh -i ./deploy_key root@$SERVER_IP_ADDRESS pwd
+
+echo 'Logged...'
+echo $HOSTNAME
 touch check.txt
