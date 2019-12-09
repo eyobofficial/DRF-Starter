@@ -14,14 +14,14 @@ after_success:
 - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
 - docker push eyobofficial/drf-starter-django
 - docker push eyobofficial/drf-starter-nginx
-before_deploy:
 - openssl aes-256-cbc -K $encrypted_a83ec8a93e11_key -iv $encrypted_a83ec8a93e11_iv -in deploy_key.enc -out ./deploy_key -d
 - eval "$(ssh-agent -s)"
 - chmod 600 ./deploy_key
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy_key
-deploy:
-  provider: script
-  script: ssh -i ./deploy_key root@$SERVER_IP_ADDRESS bash ./deploy.sh
-  on:
-    branch: development
+- ssh -i ./deploy_key root@$SERVER_IP_ADDRESS bash ./deploy.sh
+# deploy:
+#   provider: script
+#   script: ssh -i ./deploy_key root@$SERVER_IP_ADDRESS bash ./deploy.sh
+#   on:
+#     branch: development
