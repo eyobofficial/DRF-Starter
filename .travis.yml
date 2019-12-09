@@ -22,6 +22,6 @@ before_deploy:
 - ssh-add ./deploy_key
 deploy:
   provider: script
-  script: ssh -i ./deploy_key root@$SERVER_IP_ADDRESS ./deploy.sh
+  script: ssh -i ./deploy_key root@$SERVER_IP_ADDRESS bash ./deploy.sh
   on:
     branch: development
