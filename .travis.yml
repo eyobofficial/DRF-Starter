@@ -4,20 +4,21 @@ services:
 env:
 - SERVER_IP_ADDRESS=167.172.29.127
 before_install:
-- mysql -e 'CREATE DATABASE travis_ci_test;'
-- docker build -t eyobofficial/drf-starter-django .
+- bash ./deploy.sh
+# - mysql -e 'CREATE DATABASE travis_ci_test;'
+# - docker build -t eyobofficial/drf-starter-django .
 install: skip
-script:
-- docker run --net=host --env-file=.env.travis eyobofficial/drf-starter-django bash
-  ./run_tests.sh
+script: skip
+# - docker run --net=host --env-file=.env.travis eyobofficial/drf-starter-django bash
+#   ./run_tests.sh
 # after_success:
 # - docker build -t eyobofficial/drf-starter-nginx -f ./nginx/Dockerfile ./nginx
 # - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
 # - docker push eyobofficial/drf-starter-django
 # - docker push eyobofficial/drf-starter-nginx
 # - echo $USER
-deploy:
-  provider: script
-  script:  ./deploy.sh
-  on:
-    branch: development
+# deploy:
+#   provider: script
+#   script:  ./deploy.sh
+#   on:
+#     branch: development
