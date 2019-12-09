@@ -13,7 +13,7 @@ script:
 - ssh-add ./deploy_key
 # test ssh connection for: https://github.com/dwyl/learn-travis/issues/42
 - ssh -i ./deploy_key root@$SERVER_IP_ADDRESS pwd
-- echo 'Arsenal vs Westham'
+- touch file.txt
 # before_install:
 # - bash ./deploy.sh
 # - openssl aes-256-cbc -K $encrypted_a83ec8a93e11_key -iv $encrypted_a83ec8a93e11_iv -in deploy_key.enc -out ./deploy_key -d
