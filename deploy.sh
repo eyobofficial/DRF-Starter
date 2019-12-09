@@ -1,6 +1,3 @@
 #!/bin/bash
 
-touch file.txt
-pwd
-mkdir fakedir
-echo $HOSTNAME
+touch lorem_ipsum_file.txt
