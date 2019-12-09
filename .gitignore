@@ -237,9 +237,13 @@ Temporary Items
 # IDE settings and configurations
 .vscode/
 
+# ci/cd
+super_secret.txt
+
 # Custom
 /media
 /staticfiles
 /logs
 celerybeat.pid
 *.db
+
