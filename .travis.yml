@@ -4,7 +4,7 @@ services:
 env:
 - SERVER_IP_ADDRESS=167.172.29.127
 before_install: # setup the RSA key for use in Dokku Deployment:
-- openssl aes-256-cbc -K $encrypted_77965d5bdd4d_key -iv $encrypted_77965d5bdd4d_iv -in deploy_key.enc -out ./deploy_key -d
+- openssl aes-256-cbc -K $encrypted_77965d5bdd4d_key -iv $encrypted_77965d5bdd4d_iv -in deploy_key.enc -out deploy_key -d
 - eval "$(ssh-agent -s)"
 - chmod 600 ./deploy_key
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
