@@ -2,7 +2,7 @@ version: '3.7'
 services:
   web:
     build: .
-    command: bash scripts/run_web.sh
+    command: bash script/run_web.sh
     restart: always
     env_file:
       - ./.env
