@@ -8,7 +8,7 @@ before_install:
 - docker build -t eyobofficial/drf-starter-django .
 install: skip
 script:
-- docker run --net=host --env-file=.env.travis eyobofficial/drf-starter-django bash ./run_tests.sh
+- docker run --net=host --env-file=.env.travis eyobofficial/drf-starter-django bash scripts/run_tests.sh
 after_success:
 - docker build -t eyobofficial/drf-starter-nginx -f ./nginx/Dockerfile ./nginx
 - docker login -u $DOCKER_ID -p $DOCKER_PASSWORD
@@ -19,7 +19,7 @@ after_success:
 - chmod 600 ./deploy_key
 - echo -e "Host $SERVER_IP_ADDRESS\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy_key
-- ssh -i ./deploy_key root@$SERVER_IP_ADDRESS cd DRF-Starter && git pull origin development && ./deploy.sh
+- ssh -i ./deploy_key root@$SERVER_IP_ADDRESS touch file.txt
 # deploy:
 #   provider: script
 #   script: ssh -i ./deploy_key root@$SERVER_IP_ADDRESS bash ./deploy.sh
