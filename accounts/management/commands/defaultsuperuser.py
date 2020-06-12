@@ -20,6 +20,7 @@ class Command(BaseCommand):
         password = settings.DEFAULT_ADMIN_PASSWORD
         first_name = settings.DEFAULT_ADMIN_FIRST_NAME
         last_name = settings.DEFAULT_ADMIN_LAST_NAME
+        phone_number = settings.DEFAULT_ADMIN_PHONE_NUMBER
 
         try:
             if self.UserModel.objects.filter(email=email).exists():

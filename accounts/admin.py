@@ -25,8 +25,7 @@ class CustomUserAdmin(UserAdmin):
             {
                 'fields': (
                             'is_staff', 'is_active', 'is_superuser',
-                            'groups', 'user_permissions', 'status',
-                            'supplier'
+                            'groups', 'user_permissions'
                         )
             }
         ),
