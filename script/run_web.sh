@@ -15,8 +15,11 @@ python manage.py migrate --no-input
 
 # Create a default superuser account
 echo 'Create a default superuser account...'
-python manage.py create_default_superuser
+python manage.py defaultsuperuser
 
+# Run all fixtures
+echo 'Run fixtures...'
+python manage.py runfixtures
 
 echo 'Collect static files...'
 python manage.py collectstatic --no-input --clear
