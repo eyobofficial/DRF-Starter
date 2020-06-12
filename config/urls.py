@@ -25,13 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls)
 ]
 
-
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT
-    )
-
+# Media Assets
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Update Admin Site Title
-admin.site.site_header = admin.site.site_title = 'Adminstrator'
+admin.site.site_header = admin.site.site_title = settings.PROJECT_NAME
