@@ -7,17 +7,16 @@ verify_ssl = true
 autopep8 = "*"
 
 [packages]
-psycopg2-binary = "==2.7.6.1"
 python-decouple = "==3.1"
 pytz = "==2018.5"
 django-extensions = "==2.0.7"
 six = "==1.11.0"
 typing = "==3.6.4"
 django = "==3.0.7"
-mysqlclient = "*"
+mysqlclient = "==1.4.6"
 factory-boy = "*"
 djangorestframework = "*"
-markdown = "*"
+markdown = "~=3.0.0"
 django-filter = "*"
 django-cors-headers = "*"
 django-environ = "*"
@@ -31,6 +30,9 @@ ipython = "*"
 pyyaml = "*"
 django-phonenumber-field = {extras = ["phonenumbers"],version = "*"}
 django-livereload-server = "*"
+coreapi = "~=1.32.0"
+pygments = ">=2.4.0"
+django-guardian = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.8"
